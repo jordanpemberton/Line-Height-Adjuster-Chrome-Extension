@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Line Height Fixer</title>
+    <link rel="stylesheet" href="popup.css">
+</head>
+
+<body>
+    <header>
+        <h1>Line Height</h1>
+    </header>
+
+<div class="content">
+<input type="range" min="1" max="4" value="1" id="slider" step="0.25" list="slider_settings">
+<datalist id="slider_settings">
+    <option>1</option>
+    <option>1.25</option>
+    <option>1.5</option>
+    <option>1.75</option>
+    <option>2</option>
+    <option>2.25</option>
+    <option>2.5</option>
+    <option>2.75</option>
+    <option>3</option>
+    <option>3.25</option>
+    <option>3.5</option>
+    <option>3.75</option>
+    <option>4</option>
+</datalist>
+
+<output for="slider" id="output">1</output>
+
+<p class="manual_entry">Manual entry &nbsp;<input type="number" id="line_height_input" min="1"></p>
+<p class="text_center">
+<button id="clear_btn">Restore default</button>
+</p>
+    <div style="display: none;">
+    <button id="line_height_1_0">1</button>
+    <button id="line_height_1_5">1.5</button>
+    <button id="line_height_2_0">2lineheight</button>
+    <p>Learn more at <a href="https://rawgit.com/" target="_blank">RawGit.com</a></p>
+</div>
+    <hr>
+    <a href="http://www.ashconnolly.com/?ref=ext_lineheight" class="site_link" target="_blank"><img src="img/ashconnolly_logo_20_grey.png" alt=""> <span>Ash Connolly</span></a>
+    </div>
+    <script type="text/javascript" src="popup.js"></script>
+</body>
+
+</html>
