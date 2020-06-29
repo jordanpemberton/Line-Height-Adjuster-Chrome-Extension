@@ -19,26 +19,47 @@ function clearLineHeightInput () {
 
 
 function clear_style() {
-  chrome.tabs.executeScript(null,
-    {code:"var paras = document.getElementsByTagName('p');for (var i = 0; i < paras.length; i++) {paras[i].style.removeProperty('line-height');}"}
-  );
-  clearSlider();
-  clearLineHeightInput();
+    chrome.tabs.executeScript(null,
+        {code:"var paras = document.getElementsByTagName('p');for (var i = 0; i < paras.length; i++) {paras[i].style.removeProperty('line-height');}"}
+    );
+    chrome.tabs.executeScript(null,
+        {code:"var uls = document.getElementsByTagName('ul');for (var i = 0; i < uls.length; i++) {uls[i].style.removeProperty('line-height');}"}
+    );
+    chrome.tabs.executeScript(null,
+        {code:"var ols = document.getElementsByTagName('ol');for (var i = 0; i < ols.length; i++) {ols[i].style.removeProperty('line-height');}"}
+    );
+    clearSlider();
+    clearLineHeightInput();
 }
 
-function slider_line_height () {
-  chrome.tabs.executeScript(null,
-    {code:"var paras = document.getElementsByTagName('p');for (var i = 0; i < paras.length; i++) {paras[i].setAttribute('style', 'line-height:" + slider.value + " !important');}"}
-  );
-  clearLineHeightInput();  
+
+function slider_line_height() {
+    chrome.tabs.executeScript(null,
+        {code:"var paras = document.getElementsByTagName('p');for (var i = 0; i < paras.length; i++) {paras[i].setAttribute('style', 'line-height:" + slider.value + " !important');}"}
+    );
+    chrome.tabs.executeScript(null,
+        {code:"var uls = document.getElementsByTagName('ul');for (var i = 0; i < uls.length; i++) {uls[i].setAttribute('style', 'line-height:" + slider.value + " !important');}"}
+    );
+    chrome.tabs.executeScript(null,
+        {code:"var ols = document.getElementsByTagName('ol');for (var i = 0; i < ols.length; i++) {ols[i].setAttribute('style', 'line-height:" + slider.value + " !important');}"}
+    );
+    clearLineHeightInput();  
 }
 
-function slider_line_height_input () {
-  chrome.tabs.executeScript(null,
-    {code:"var paras = document.getElementsByTagName('p');for (var i = 0; i < paras.length; i++) {paras[i].setAttribute('style', 'line-height:" + line_height_input.value + " !important');}"}
-  );
-  clearSlider();
+
+function slider_line_height_input() {
+    chrome.tabs.executeScript(null,
+        {code:"var paras = document.getElementsByTagName('p');for (var i = 0; i < paras.length; i++) {paras[i].setAttribute('style', 'line-height:" + line_height_input.value + " !important');}"}
+    );
+    chrome.tabs.executeScript(null,
+        {code:"var uls = document.getElementsByTagName('ul');for (var i = 0; i < uls.length; i++) {uls[i].setAttribute('style', 'line-height:" + line_height_input.value + " !important');}"}
+    );
+    chrome.tabs.executeScript(null,
+        {code:"var ols = document.getElementsByTagName('ol');for (var i = 0; i < ols.length; i++) {ols[i].setAttribute('style', 'line-height:" + line_height_input.value + " !important');}"}
+    );
+    clearSlider();
 }
+
 
 function input_listener(identifier, func) {
 identifier.addEventListener('change', function() {
